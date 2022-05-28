@@ -7,7 +7,8 @@ export let options = {
 
 export default function () {
     // http.get('http://localhost:8000/hello')
-    http.get('http://host.docker.internal:8000/hello')
+    // http.get('http://host.docker.internal:8000/hello')
+    http.get('http://host.docker.internal:8000/products')
 }
 
 // docker-compose run --rm k6 run /scripts/test.js

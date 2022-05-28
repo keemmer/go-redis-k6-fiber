@@ -31,7 +31,8 @@ func (r productRepositoryRedis) GetProduct() (products []product, err error) {
 			return products, nil
 		}
 	}
-	err = r.db.Order("quantity desc").Limit(30).Find(&products).Error
+	// err = r.db.Order("quantity desc").Limit(10000).Find(&products).Error
+	err = r.db.Order("quantity desc").Limit(50).Find(&products).Error
 	if err != nil {
 		return nil, err
 	}

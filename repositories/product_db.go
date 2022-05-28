@@ -15,6 +15,7 @@ func NewProductRepositoryDB(db *gorm.DB) ProductRepository {
 }
 
 func (r productRepositoryDB) GetProduct() (products []product, err error) {
-	err = r.db.Order("quantity desc").Limit(30).Find(&products).Error
+	// err = r.db.Order("id desc").Limit(50000).Find(&products).Error
+	err = r.db.Order("id desc").Limit(50).Find(&products).Error
 	return products, err
 }
